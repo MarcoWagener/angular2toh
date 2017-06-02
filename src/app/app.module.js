@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms"); //ngModel
-// import { RouterModule } from '@angular/router';
+var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_component_1 = require("./app.component");
 var hero_detail_component_1 = require("./hero-detail.component");
 var heroes_component_1 = require("./heroes.component");
@@ -25,7 +27,9 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            app_routing_module_1.AppRoutingModule
+            app_routing_module_1.AppRoutingModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
         ],
         declarations: [
             app_component_1.AppComponent,
